@@ -55,7 +55,7 @@ var fizzBuzzGame = function () {
     });
 
     var force = d3.layout.force()
-        .gravity(0.05)
+        .gravity(0.06)
         .charge(function (d, i) {
         return d.radius * -1;
     })
@@ -208,24 +208,24 @@ var fizzBuzzGame = function () {
             node.attr('pointer-events', 'none');
 
             var button = svg.append("g")
-                .attr("transform", "translate(" + [width/2 - 50, height/2 - 20] + ")");
+                .attr("transform", "translate(" + [width/2 - 100, height/2 - 30] + ")");
 
             button.append('rect')
                 .attr({
                     "class": "button",
                     "rx": 5,
                     "ry": 5,
-                    "width": 120, 
-                    "height": 30,
+                    "width": 200, 
+                    "height": 50,
                     "fill": "#cccccc"
                 });
 
              button.append('text')
-                .text("Igraj ponovo!")
+                .text("Igraj ponovno!")
                 .attr('class', 'replay')
                 .attr({
-                    "dx": 8,
-                    "dy": 20
+                    "dx": 40,
+                    "dy": 30
                 });
 
             button.on("mouseover", function () {
