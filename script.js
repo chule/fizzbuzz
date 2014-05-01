@@ -86,8 +86,9 @@ var fizzBuzzGame = function () {
     svg.append('text').text('Pronađi broj ' + randomNum + '.')
     .attr({
         "class": "opis",
-        "x": 50,
-        "y": 30
+        "x": width/2,
+        "y": 50,
+        "text-anchor": "middle"
     });    
 
     var node = svg.append("g")
@@ -198,8 +199,9 @@ var fizzBuzzGame = function () {
         svg.append('text').text(counter + ". promašaj.")
             .attr({
                 "class": "attempt",
-                "x": 50,
-                "y": 60
+                "x": width/2,
+                "y": 80,
+                "text-anchor": "middle"
             }); 
         } else if (randomNum === d.value) {
             d3.select('.opis').text("Broj je pogođen iz " + counter + ". pokušaja!")
