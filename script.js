@@ -43,8 +43,8 @@ var fizzBuzzGame = function () {
     //var randomNum = fizzesAndBuzzes[Math.floor(Math.random() * fizzesAndBuzzes.length)];
     var randomNum = 100;
 
-    var width = 960,
-        height = 500;
+    var width = 800,
+        height = 700;
 
     var rScale = d3.scale.linear()
         .domain([1, 100])
