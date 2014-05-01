@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     background-color: #faf8ef;
   }
 
@@ -27,18 +28,32 @@ body {
   }
 
 
-  .nodetext, .attempt, .opis, .replay { 
+  .nodetext, .attempt, .title, .replay, .desc { 
       fill: #000;
-      pointer-events: none;
-      font-size: 20pt;
-      font-weight: bold;
+      pointer-events: none;      
       font-family: 'Open Sans', sans-serif;
   }
 
-  .attempt, .opis, .replay {
-      font-size: 16pt;      
+  .nodetext {
+      font-size: 20pt;
+      font-weight: bold;
+  } 
 
+  .title {
+      font-size: 22pt; 
+      font-weight: bold;     
   }
+
+  .attempt {
+      font-size: 16pt; 
+      font-weight: bold; 
+  }
+
   .replay {
       font-size: 12pt;
+      font-weight: bold;
+  }
+
+  .desc {
+      font-size: 11pt;
   }

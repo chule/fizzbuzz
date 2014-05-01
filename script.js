@@ -40,8 +40,8 @@ var fizzBuzzGame = function () {
         return arr;
     }(100);
 
-    //var randomNum = fizzesAndBuzzes[Math.floor(Math.random() * fizzesAndBuzzes.length)];
-    var randomNum = 100;
+    var randomNum = fizzesAndBuzzes[Math.floor(Math.random() * fizzesAndBuzzes.length)];
+    //var randomNum = 100;
 
     var width = 800,
         height = 700;
@@ -83,13 +83,33 @@ var fizzBuzzGame = function () {
         "height": height
     });
 
-    svg.append('text').text('Pronađi broj ' + randomNum + '.')
+    svg.append('text').text('FIZZ BUZZ THE GAME: find number ' + randomNum)
     .attr({
-        "class": "opis",
+        "class": "title",
         "x": width/2,
         "y": 50,
         "text-anchor": "middle"
     });    
+
+    svg.append('text').text('HOW TO PLAY: Keep clicking on circles unil you hit the right number.')
+    .attr({
+        "class": "desc",
+        "x": width/2,
+        "y": 640,
+        "text-anchor": "middle"
+    });
+
+    svg.append('foreignObject')
+    .attr("width", 480)
+    .attr("height", 20)
+    .attr("transform", "translate(250, 650)")
+    .append("xhtml:body")
+    .style("font", "12px 'Open Sans'")
+    .html("Created by <a href='https://twitter.com/igorcuckovic' target='_blank'>Igor Čučković</a>. Based on <a href='http://en.wikipedia.org/wiki/Fizz_buzz' target='_blank'>Fizz Buzz</a>.")
+    .attr({
+
+    });
+    //http://en.wikipedia.org/wiki/Fizz_buzz
 
     var node = svg.append("g")
         .attr("class", "nodes")
@@ -196,19 +216,19 @@ var fizzBuzzGame = function () {
         d3.selectAll('.attempt').remove();
 
         if (randomNum !== d.value) {
-        svg.append('text').text(counter + ". promašaj.")
+        svg.append('text').text(counter + ". miss")
             .attr({
                 "class": "attempt",
                 "x": width/2,
-                "y": 80,
+                "y": 90,
                 "text-anchor": "middle"
             }); 
         } else if (randomNum === d.value) {
-            d3.select('.opis').text("Broj je pogođen iz " + counter + ". pokušaja!")
+            d3.select('.title').text("Number was found in " + counter + ". attempt!")
             node.attr('pointer-events', 'none');
 
             var button = svg.append("g")
-                .attr("transform", "translate(" + [width/2 - 100, height/2 - 30] + ")");
+                .attr("transform", "translate(" + [width/2 - 98, height/2 - 30] + ")");
 
             button.append('rect')
                 .attr({
@@ -221,7 +241,7 @@ var fizzBuzzGame = function () {
                 });
 
              button.append('text')
-                .text("Igraj ponovno!")
+                .text("Play it again!")
                 .attr('class', 'replay')
                 .attr({
                     "dx": 40,
