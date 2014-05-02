@@ -41,8 +41,8 @@ var fizzBuzzGame = function() {
         return arr;
     }(100);
 
-    //var randomNum = fizzesAndBuzzes[Math.floor(Math.random() * fizzesAndBuzzes.length)];
-    var randomNum = 100;
+    var randomNum = fizzesAndBuzzes[Math.floor(Math.random() * fizzesAndBuzzes.length)];
+    //var randomNum = 100;
 
     var width = 800,
         height = 700;
