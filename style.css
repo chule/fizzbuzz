@@ -57,3 +57,10 @@ body {
   .desc {
       font-size: 11pt;
   }
+
+  .red {
+        fill: #C81E14;
+    }
+  .grey {
+        fill: lightgrey;
+    }
